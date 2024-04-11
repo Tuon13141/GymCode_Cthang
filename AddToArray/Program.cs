@@ -4,9 +4,9 @@
     {
         Console.WriteLine("Nhap so luong phan tu trong mang : ");
         int a = int.Parse(Console.ReadLine());
-        int[] b = new int[a + 1];
+        int[] b = new int[a];
 
-        for(int i = 0; i < a; i++){
+        for(int i = 0; i < b.Length; i++){
             Console.WriteLine("Nhap phan tu thu " + (i+1));
             b[i] = int.Parse(Console.ReadLine());
 
@@ -26,6 +26,7 @@
         Console.WriteLine("Nhap gia tri muon them vao mang : ");
         int value = int.Parse(Console.ReadLine());
 
+        Array.Resize(ref b, a + 1);
         for(int i = a; i >= index; i--){
             b[i] = b[i-1];
         }
@@ -33,7 +34,7 @@
         b[index - 1] = value;
 
         Console.WriteLine("Cac phan tu trong mang sau thay doi: ");
-        for(int i = 0; i < a + 1; i++){
+        for(int i = 0; i < b.Length; i++){
             Console.Write(b[i] + " ");
         }
     }
