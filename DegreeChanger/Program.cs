@@ -24,11 +24,16 @@
             Console.WriteLine("Enter your choice: ");
             choice = Int32.Parse(Console.ReadLine());
 
+            double input = 0;
+            Console.WriteLine("Enter your input");
+            input = double.Parse(Console.ReadLine());
             switch (choice)
             {
                 case 1: 
+                FahrenheitToCelsius(input);
                 break;
                 case 2: 
+                CelsiusToFahrenheit(input);
                 break;
                 case 0:
                     Environment.Exit(0);
