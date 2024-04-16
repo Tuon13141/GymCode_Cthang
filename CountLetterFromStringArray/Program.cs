@@ -21,5 +21,6 @@
         char letter = Console.ReadKey().KeyChar;
         Console.WriteLine();
         CountLetter(letter, input);
+        
     }
 }
