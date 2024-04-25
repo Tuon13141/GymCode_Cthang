@@ -1,6 +1,6 @@
 namespace Shape
 {
-    public class Rectangle : ResizeableShape
+    public class Rectangle : ResizeableAndColortableShape
     {
         private double width = 1.0;
         private double length = 1.0;
@@ -65,6 +65,11 @@ namespace Shape
         {
             width = width / 100 * percent;
             length = length / 100 * percent;
+        }
+
+        public override void HowToColor()
+        {
+            Console.WriteLine("Can draw 4 side");
         }
     }
 }

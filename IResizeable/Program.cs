@@ -6,26 +6,22 @@ internal class Program
         Shape.Shape shape = new Shape.Shape("blue", true);
         Console.WriteLine(shape.ToString());
         Console.WriteLine();
-        ResizeableShape circle = new Circle(1, "yellow", false);
-        Console.WriteLine("Before : ");
-        Console.WriteLine(circle.ToString());
-        Console.WriteLine("Affter : ");
-        circle.Resize(120);
-        Console.WriteLine(circle.ToString());
-        Console.WriteLine();
-        ResizeableShape rectagle = new Rectangle(2, 2, "red", true);
-        Console.WriteLine("Before : ");
-        Console.WriteLine(rectagle.ToString());
-        Console.WriteLine("Affter : ");
-        rectagle.Resize(110);
-        Console.WriteLine(rectagle.ToString());
-        Console.WriteLine();
-        ResizeableShape square = new Square(3, "black", true);
-        Console.WriteLine("Before : ");
-        Console.WriteLine(square.ToString());
-        Console.WriteLine("Affter : ");
-        square.Resize(150);
-        Console.WriteLine(square.ToString());
+
+        List<ResizeableAndColortableShape> ResizeableAndColortableShape= new List<ResizeableAndColortableShape>(){
+            new Circle(1, "yellow", false),
+            new Rectangle(2, 2, "red", true),
+            new Square(3, "black", true),
+        };
+        foreach(ResizeableAndColortableShape rshape in ResizeableAndColortableShape){
+            Console.WriteLine("Before : ");
+            Console.WriteLine(rshape.ToString());
+            Random random = new Random();
+            rshape.Resize(random.NextInt64(100, 200));
+            Console.WriteLine("After : ");
+            Console.WriteLine(rshape.ToString());
+            rshape.HowToColor();
+            Console.WriteLine();
+        }
     }
 }
 

@@ -1,9 +1,11 @@
 namespace Shape{
-    public abstract class ResizeableShape : Shape, IResizeable
+    public abstract class ResizeableAndColortableShape : Shape, IResizeable, IColorable
     {
-        public ResizeableShape(String color, bool filled) : base(color, filled){}
+        public ResizeableAndColortableShape(String color, bool filled) : base(color, filled){}
 
-        public ResizeableShape(){}
+        public ResizeableAndColortableShape(){}
         public abstract void Resize(double percent);
+
+        public abstract void HowToColor();
     }
 }

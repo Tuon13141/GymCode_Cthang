@@ -2,7 +2,7 @@ using System;
 
 namespace Shape
 {
-    public class Circle : ResizeableShape
+    public class Circle : ResizeableAndColortableShape
     {
         private double radius = 1.0;
 
@@ -51,6 +51,11 @@ namespace Shape
         public override void Resize(double percent)
         {
             radius = radius / 100 * percent;
+        }
+
+        public override void HowToColor()
+        {
+            Console.WriteLine("Can draw outside line");
         }
     }
 }
